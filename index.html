@@ -336,17 +336,33 @@
         if (yesSmall) yesSmall.innerText = msg;
 
         // Grow the No button
-        noSize += 15;
+        const isMobile = window.innerWidth <= 768;
+        const maxFontSize = isMobile ? 40 : 150; // Cap font size on mobile
+        
+        noSize += isMobile ? 5 : 15; // Grow slower on mobile
+        if (noSize > maxFontSize) noSize = maxFontSize;
+
+        const padV = isMobile ? (noSize * 0.5) : (noSize * 0.75);
+        const padH = isMobile ? (noSize * 1.5) : (noSize * 2);
+
         const noBtn = document.getElementById("no");
         const noBig = document.getElementById("noBig");
-        if (noBtn) {
-            noBtn.style.fontSize = noSize + "px";
-            noBtn.style.padding = (noSize * 0.75) + "px " + (noSize * 2) + "px";
-        }
-        if (noBig) {
-            noBig.style.fontSize = noSize + "px";
-            noBig.style.padding = (noSize * 0.75) + "px " + (noSize * 2) + "px";
-        }
+        
+        const updateBtn = (btn) => {
+            if (btn) {
+                btn.style.fontSize = noSize + "px";
+                btn.style.padding = padV + "px " + padH + "px";
+                // Ensure it doesn't overflow screen width
+                if (isMobile) {
+                    btn.style.maxWidth = "90vw";
+                    btn.style.whiteSpace = "normal";
+                    btn.style.lineHeight = "1.2";
+                }
+            }
+        };
+
+        updateBtn(noBtn);
+        updateBtn(noBig);
 
         let sadMusic = document.getElementById("sadMusic");
         let happyMusic = document.getElementById("happyMusic");
