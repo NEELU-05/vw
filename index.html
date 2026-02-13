@@ -216,16 +216,29 @@
         <source src="https://github.com/NikhilMarko03/resources/raw/main/sad.mp3" type="audio/mp3" />
       </audio>
       <div class="model-content">
-        <p class="modelText" id="modelText">Please</p>
+        <p class="modelText" id="modelText">Please... 🥺</p>
         <img class="modelImg" id="modelImg" src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216" alt="heyy" />
         <div class="flex">
-          <button class="button" id="yes" onmouseenter="angry()" onmouseleave="normal()" onclick="no()">Yes 😭</button>
-          <button class="button" id="no" onmouseenter="happy()" onmouseleave="normal()" onclick="yes()">No 🥰</button>
+          <button class="button" id="yesSmall" onmouseenter="angry()" onmouseleave="normal()" onclick="no()">Yes 😭</button>
+          <button class="button" id="noBig" onmouseenter="happy()" onmouseleave="normal()" onclick="yes()">No 🥰</button>
         </div>
       </div>
     </div>
 
     <script>
+      let counter = 0;
+      let noSize = 20;
+      const noMessages = [
+        "Yes 😭",
+        "Are you sure? 🥺",
+        "Pookie please... 😢",
+        "Don't do this to me :(",
+        "You're breaking my heart",
+        "HUHUHUHU 😭",
+        "I'm gonna cry...",
+        "Think again! 😿"
+      ];
+
       document.addEventListener("DOMContentLoaded", function () {
         var images = document.querySelectorAll(".image1");
         function setRandomPosition(element) {
@@ -273,12 +286,31 @@
         "https://c.tenor.com/BP70qe8X0J8AAAAC/crycat-crying-cat.gif",
       ];
 
-      const blackmail = ["Please", "I'm begging you", "I'm crying", "I'm sad", "HUHUHUHU", "Please Say Yes", "I'm gonna cry"];
-
-      let counter = 0;
+      const blackmail = ["Please", "I'm begging you", "I'm crying", "I'm sad", "HUHUHUHU", "Please Say No", "I'm gonna cry"];
 
       function no() {
         counter++;
+        
+        // Change button text
+        const yesBtn = document.getElementById("yes");
+        const yesSmall = document.getElementById("yesSmall");
+        const msg = noMessages[Math.min(counter, noMessages.length - 1)];
+        if (yesBtn) yesBtn.innerText = msg;
+        if (yesSmall) yesSmall.innerText = msg;
+
+        // Grow the No button
+        noSize += 15;
+        const noBtn = document.getElementById("no");
+        const noBig = document.getElementById("noBig");
+        if (noBtn) {
+            noBtn.style.fontSize = noSize + "px";
+            noBtn.style.padding = (noSize * 0.75) + "px " + (noSize * 2) + "px";
+        }
+        if (noBig) {
+            noBig.style.fontSize = noSize + "px";
+            noBig.style.padding = (noSize * 0.75) + "px " + (noSize * 2) + "px";
+        }
+
         let sadMusic = document.getElementById("sadMusic");
         let happyMusic = document.getElementById("happyMusic");
         happyMusic.pause();
@@ -295,7 +327,7 @@
       }
 
       function yes() {
-        if (counter >= 3) {
+        if (counter >= 2) {
           let model = document.getElementById("model2");
           let model2 = document.getElementById("model");
           let sadMusic = document.getElementById("sadMusic");
@@ -304,13 +336,18 @@
           let happyMusic = document.getElementById("happyMusic");
           happyMusic.play();
           model.style.display = "none";
-          setTimeout(() => { model.style.display = "flex"; }, 100);
+          setTimeout(() => { 
+            model.style.display = "flex"; 
+            const modelImage2 = document.getElementById("modelImg2");
+            // Fix broken cat image
+            modelImage2.src = "https://media.tenor.com/JCc7pU7v8Y8AAAAM/cute-cat-cat-kiss.gif";
+          }, 100);
           const wedate = document.getElementById("wedate");
           const btns = document.getElementById("btns");
           btns.style.display = "none";
-          wedate.innerText = "We are each other's valentine now. I love you cutie. ❤️😘";
+          wedate.innerText = "I knew you didn't hate me! I love you so much! ❤️😘";
         } else {
-          alert("Don't say yes right away, cutie. Play around a bit 😉😘");
+          alert("Don't be so nice right away! Try clicking the other button first 😉😘");
         }
       }
 
