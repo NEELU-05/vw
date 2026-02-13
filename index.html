@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you hate me??</title>
+    <meta name="description" content="There is a surprise." />
+    <meta name="keywords" content="Valentine, Love, Surprise" />
+    <meta name="author" content="Prashant" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="language" content="English" />
+    <meta name="web_author" content="Prashant" />
+    <meta name="reply-to" content="" />
+    <meta name="rating" content="general" />
+    <meta name="og:title" content="There is a Surprise" />
+    <meta name="og:description" content="There is a surprise." />
+    <meta name="og:image" content="https://i.ibb.co/k6xD4nM/New-Project.jpg" />
+    <meta name="og:url" content="https://prashant-valentine.netlify.app/" />
+    <meta name="og:site_name" content="There is a Surprise" />
+    <meta name="og:locale" content="en_US" />
+    <meta name="og:type" content="website" />
+    <meta name="og:author" content="Prashant" />
+    <meta name="og:reply-to" content="" />
+    <meta name="og:web_author" content="Prashant" />
+    <meta name="og:rating" content="general" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Love+Light&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap");
+      
+      body {
+        background-color: #f8c8dc;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: start;
+        align-items: center;
+        overflow: hidden !important;
+      }
+      html {
+        overflow: hidden;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .headerText {
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: "Lovers Quarrel";
+      }
+      .image {
+        object-fit: cover;
+        mix-blend-mode: multiply;
+        height: 400px;
+        width: 400px;
+      }
+      .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 10px;
+      }
+      .button {
+        background-color: #ff4f99;
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        text-align: center;
+        padding: 20px 30px;
+        border-radius: 20px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #ff71ac;
+        color: white;
+        transition: ease-in-out 0.3s;
+      }
+      .absImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+      .image1 {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        mix-blend-mode: multiply;
+        position: absolute;
+        animation: slideUp 1s ease-in-out;
+      }
+      @keyframes slideUp {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(0%); }
+      }
+      .model {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index: 1;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .model-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .modelText {
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: "Lovers Quarrel";
+      }
+      .modelImg {
+        max-height: 300px;
+        width: 100%;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+      }
+      .f-aps {
+        position: absolute;
+        bottom: 0;
+        animation: slideUp 1s ease-in-out;
+        right: 0;
+        padding: 20px;
+      }
+      .f-aps img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex f-aps">
+      <p>Made with ❤️ by <a rel="noopener" href="https://www.linkedin.com/in/mjhasan21/" target="_blank">Your Teddy</a></p>
+      <img class="image2" src="https://logodix.com/logo/1205168.png" alt="heyy" id="heart1" />
+    </div>
+    <h1 class="headerText" id="wedate">Do you hate me, Babe? 🥺</h1>
+    <img class="image" src="https://github.com/NikhilMarko03/resources/blob/main/happy1.gif?raw=true" alt="heyy" id="mainImg" />
+    <div class="flex" id="btns">
+      <button class="button" id="yes" onmouseenter="angry()" onmouseleave="normal()" onclick="no()">Yes 😭</button>
+      <button class="button" id="no" onmouseenter="happy()" onmouseleave="normal()" onclick="yes()">No 🥰</button>
+    </div>
+    <div class="absImages" id="absImg" style="position: absolute; top:0; left:0; width:100%; height:100%; display:none; pointer-events:none;">
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+    </div>
+
+    <div class="model" id="model2">
+      <audio id="happyMusic" style="opacity: 0" controls loop>
+        <source src="https://github.com/NikhilMarko03/resources/raw/main/happy.mp3" type="audio/mp3" />
+      </audio>
+      <div class="model-content">
+        <p class="modelText" id="modelText2">I Love you 😘😘</p>
+        <img class="modelImg" id="modelImg2" src="https://takelessons.com/blog/wp-content/uploads/2013/07/happy-cat.gif" alt="heyy" />
+        <button class="button" id="yes" onmouseenter="happy()" onmouseleave="normal()" onclick="ly2()">Love You Too 🥰</button>
+      </div>
+    </div>
+
+    <div id="model" class="model">
+      <audio id="sadMusic" style="opacity: 0" controls loop>
+        <source src="https://github.com/NikhilMarko03/resources/raw/main/sad.mp3" type="audio/mp3" />
+      </audio>
+      <div class="model-content">
+        <p class="modelText" id="modelText">Please</p>
+        <img class="modelImg" id="modelImg" src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216" alt="heyy" />
+        <div class="flex">
+          <button class="button" id="yes" onmouseenter="angry()" onmouseleave="normal()" onclick="no()">Yes 😭</button>
+          <button class="button" id="no" onmouseenter="happy()" onmouseleave="normal()" onclick="yes()">No 🥰</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var images = document.querySelectorAll(".image1");
+        function setRandomPosition(element) {
+          element.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+          element.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+        }
+        images.forEach(function (image) { setRandomPosition(image); });
+      });
+
+      function angry() {
+        var images = document.querySelectorAll(".image1");
+        var absImg = document.getElementById("absImg");
+        var mainImg = document.getElementById("mainImg");
+        mainImg.src = "https://github.com/NikhilMarko03/resources/blob/main/sad1.gif?raw=true";
+        absImg.style.display = "flex";
+        images.forEach(function (image) {
+          image.src = "https://github.com/NikhilMarko03/resources/blob/main/sad1.gif?raw=true";
+        });
+      }
+
+      function happy() {
+        var images = document.querySelectorAll(".image1");
+        var absImg = document.getElementById("absImg");
+        absImg.style.display = "flex";
+        var mainImg = document.getElementById("mainImg");
+        mainImg.src = "https://github.com/NikhilMarko03/resources/blob/main/happy3.gif?raw=true";
+        images.forEach(function (image) {
+          image.src = "https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true";
+        });
+      }
+
+      function normal() {
+        var absImg = document.getElementById("absImg");
+        absImg.style.display = "none";
+        var mainImg = document.getElementById("mainImg");
+        mainImg.src = "https://github.com/NikhilMarko03/resources/blob/main/happy1.gif?raw=true";
+      }
+
+      const sadCat = [
+        "https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216",
+        "https://emoji.gg/assets/emoji/5228_cat_cri.gif",
+        "https://media1.tenor.com/images/a0554662ae7c3c60c0a7fdadac74ef18/tenor.gif?itemid=13931206",
+        "https://media3.giphy.com/media/qpCvOBBmBkble/giphy.gif",
+        "https://c.tenor.com/fpIAhF2jIY0AAAAC/cat-crying.gif",
+        "https://c.tenor.com/BP70qe8X0J8AAAAC/crycat-crying-cat.gif",
+      ];
+
+      const blackmail = ["Please", "I'm begging you", "I'm crying", "I'm sad", "HUHUHUHU", "Please Say Yes", "I'm gonna cry"];
+
+      let counter = 0;
+
+      function no() {
+        counter++;
+        let sadMusic = document.getElementById("sadMusic");
+        let happyMusic = document.getElementById("happyMusic");
+        happyMusic.pause();
+        sadMusic.play();
+        let model = document.getElementById("model");
+        model.style.display = "none";
+        setTimeout(() => {
+          model.style.display = "flex";
+          const modelImage = document.getElementById("modelImg");
+          const modelText = document.getElementById("modelText");
+          modelImage.src = sadCat[Math.floor(Math.random() * sadCat.length)];
+          modelText.innerText = blackmail[Math.floor(Math.random() * blackmail.length)];
+        }, 100);
+      }
+
+      function yes() {
+        if (counter >= 3) {
+          let model = document.getElementById("model2");
+          let model2 = document.getElementById("model");
+          let sadMusic = document.getElementById("sadMusic");
+          sadMusic.pause();
+          model2.style.display = "none";
+          let happyMusic = document.getElementById("happyMusic");
+          happyMusic.play();
+          model.style.display = "none";
+          setTimeout(() => { model.style.display = "flex"; }, 100);
+          const wedate = document.getElementById("wedate");
+          const btns = document.getElementById("btns");
+          btns.style.display = "none";
+          wedate.innerText = "We are each other's valentine now. I love you cutie. ❤️😘";
+        } else {
+          alert("Don't say yes right away, cutie. Play around a bit 😉😘");
+        }
+      }
+
+      function ly2() {
+        document.getElementById("model2").style.display = "none";
+        document.getElementById("model").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
